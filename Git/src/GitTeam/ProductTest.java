@@ -5,15 +5,13 @@ public class ProductTest {
 	public static void main(String[] args) {
 
 	}
-
 }
 
-abstract class Product{
+abstract class Product {
 	private double price;
-	private String name;
-	
-	Product(){
-		
+
+	Product() {
+
 	}
 
 	public double getPrice() {
@@ -23,54 +21,52 @@ abstract class Product{
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public void setName(String name){
-		this.name = name;
-	}
+
 	public abstract String getName();
 }
 
-interface Cooker{
+interface Cooker {
 	public String preparedFood();
 }
 
-class Toaster extends Product implements Cooker{
-	Toaster(){
-		
+class Toaster extends Product implements Cooker {
+	Toaster() {
+
 	}
-	
-	public String preparedFood(){
-		
+
+	public String preparedFood() {
+		return "preparedFood";
 	}
-	
-	public String getName(){
-		return name;
+ 
+	public String getName() {
+		return getClass().getName();
 	}
 }
 
-class Laptop{
+class Laptop {
 	double totalCapacity;
 	double usedCapacity;
-	
-	Laptop(){
-		
-	}
-	
-	public double getFreeCapacity(){
-		
+
+	Laptop() {
+
 	}
 
-	public void format(){
-		
+	public double getFreeCapacity() {
+		return 5;
 	}
-	
-	public boolean isConnected(){
-		
+
+	public void format() {
+
 	}
-	
-	public double maxSpeed(){
-		
+
+	public boolean isConnected() {
+		return true;
 	}
-	
+
+	public double maxSpeed() {
+		return 10.00;
+	}
+
 	public double getTotalCapacity() {
 		return totalCapacity;
 	}
@@ -86,33 +82,35 @@ class Laptop{
 	public void setUsedCapacity(double usedCapacity) {
 		this.usedCapacity = usedCapacity;
 	}
-	
-	public String getName(){
-		
+
+	public String getName() {
+		return getClass().getName();
 	}
 }
 
-interface DataStorage{
+interface DataStorage {
 	public double getFreeCapacity();
+
 	public void format();
 }
 
-class SmartTV{
+class SmartTV {
 	private int channel;
-	
-	SmartTV(){
-		
+
+	SmartTV() {
+
 	}
-	
-	public boolean isConnected(){
-		
+
+	public boolean isConnected() {
+		return true;
 	}
-	
-	public double maxSpeed(){
-		
+
+	public double maxSpeed() {
+		return 5;
 	}
-	public String getName(){
-		
+
+	public String getName() {
+		return getClass().getName();
 	}
 
 	public int getChannel() {
@@ -122,5 +120,5 @@ class SmartTV{
 	public void setChannel(int channel) {
 		this.channel = channel;
 	}
-	
+
 }
