@@ -1,15 +1,17 @@
 package GitTeam;
 
-public class Laptop extends Product implements Networked {
+public class Laptop extends Product implements Networked , DataStorage {
 
 	
 		private double totalCapacity;
 		private double usedCapacity;
 		
+		@Override
 		public double getFreeCapacity() {
 			return 5;
 		}
 
+		@Override
 		public void format() {
 			System.out.println("This laptop is formating");
 		}
