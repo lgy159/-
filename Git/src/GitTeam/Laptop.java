@@ -1,6 +1,6 @@
 package GitTeam;
 
-public class Laptop extends Product implements Networked {
+public class Laptop extends Product implements Networked, DataStorage {
 
 	
 		private double totalCapacity;
@@ -11,7 +11,7 @@ public class Laptop extends Product implements Networked {
 		}
 
 		public void format() {
-			System.out.println("This laptop is formating");
+			System.out.println(getName()+" is formating");
 		}
 
 		@Override
@@ -21,8 +21,7 @@ public class Laptop extends Product implements Networked {
 
 		@Override
 		public double maxSpeed() {
-			// TODO Auto-generated method stub
-			return 0;
+			return 10;
 		}
 
 		public double getTotalCapacity() {
