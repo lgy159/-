@@ -4,62 +4,56 @@ public class ProductTest {
 
 	public static void main(String[] args) {
 
-		Product la = new Laptop();
-		Product tv = new SmartTV();
-		Product to = new Toaster();
+		// 노트북
+		Laptop la = new Laptop();
+		DataStorage la2 = la;
+		Networked la3 = la;
 
-		DataStorage la2 = new Laptop();
-		
-		Networked la3 = new Laptop();
-		Networked tv2 = new SmartTV();
-		
-		Cooker to2 = new Toaster();
-		
+		// tv
+		SmartTV tv = new SmartTV();
+		Networked tv2 = tv;
+
+		// 토스터
+		Toaster to = new Toaster();
+		Cooker to2 = to;
+
+		// 노트북 관련 메소드
+		testProduct(la);
+		testDataStorage(la2);
+		testNetworked(la3);
+
+		System.out.println("");
+		// tv 관련 메소드
+		testProduct(tv);
+		testNetworked(tv2);
+
+		System.out.println("");
+		// 토스터 관련 메소드
+		testProduct(to);
+		testCooker(to2);
+
 	}
 
-	public void testProduct(Product p) {
+	public static void testProduct(Product p) {
+		System.out.println("Name " + p.getName());
 		p.setPrice(5000);
-		System.out.println(p.getPrice());
-		System.out.println(p.getName());
+		System.out.println("Price " + p.getPrice());
+
 	}
 
-	public void testDataStorage(DataStorage d) {
-		System.out.println(d.getFreeCapacity());
+	public static void testDataStorage(DataStorage d) {
+		System.out.println("Free Capacity : " + d.getFreeCapacity());
 		d.format();
 	}
 
-	public void testNetworked(Networked n) {
+	public static void testNetworked(Networked n) {
 
-		System.out.println(n.isConnected());
-		System.out.println(n.maxSpeed());
+		System.out.println("Connect : " + n.isConnected());
+		System.out.println("Max Speed : " + n.maxSpeed());
 	}
 
-	public void testCooker(Cooker c) {
+	public static void testCooker(Cooker c) {
 		System.out.println(c.preparedFood());
 	}
 
-}
-
-interface Cooker {
-	public String preparedFood();
-}
-
-class Toaster extends Product implements Cooker {
-	Toaster() {
-
-	}
-
-	public String preparedFood() {
-		return "preparedFood";
-	}
-
-	public String getName() {
-		return getClass().getName();
-	}
-}
-
-interface DataStorage {
-	public double getFreeCapacity();
-
-	public void format();
 }

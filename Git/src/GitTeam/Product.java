@@ -4,8 +4,7 @@ abstract class Product {
 	private double price;
 
 	public double getPrice() {
-		if (price < 0 )
-		{
+		if (price < 0) {
 			System.out.println("Error! invalid value : price");
 			return -1;
 		}
@@ -13,14 +12,15 @@ abstract class Product {
 	}
 
 	public void setPrice(double price) {
-		if (price < 0 )
-		{
+		if (price < 0) {
 			System.out.println("Error! invalid value : price");
-			return ;
+			return;
 		}
 		this.price = price;
 	}
-	
 
-	public abstract String getName();
+	public String getName() {
+		return getClass().getSimpleName();
+	}
+
 }

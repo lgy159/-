@@ -24,23 +24,20 @@ public class SmartTV extends Product implements Networked {
 	}
 
 	public int getChannel() {
-		if(channel <0)
-		{
+		if (channel < 0) {
 			System.out.println("Error ! invalid value : channel");
 			return -1;
 		}
-		
+
 		return channel;
 	}
 
 	public void setChannel(int channel) {
-		if(channel <0)
-		{
+		if (channel < 0) {
 			System.out.println("Error ! invalid value : channel");
-			return ;
+			return;
 		}
 		this.channel = channel;
 	}
-	
 
 }
